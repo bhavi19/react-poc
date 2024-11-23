@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ErrorBoundary from './ErroeBoundary';
+import LearnUseMemo from './Learnings/LearnUseMemo';
+import LearnUseCallback from './Learnings/LearnUseCallback';
+import LearnReactMemo from './Learnings/LearnReactMemo';
+import LearnUseRef from './Learnings/LearnUseRef';
+import Test from './Learnings/Test';
+import BubbleSort from './SortingAlgo/BubbleSort';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ErrorBoundary fallback={<p>Error occurred.</p>}>
+      <div className="App">
+        <BubbleSort/>
+        {/* <Test /> */}
+        {/* <LearnUseRef/> */}
+        {/* <LearnReactMemo/> */}
+        {/* <LearnUseMemo /> */}
+        {/* <LearnUseCallback/> */}
+      </div>
+    </ErrorBoundary>
   );
 }
 
